@@ -44,8 +44,3 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
 
-
-
-i want to push to github page , give me a steps
-
-how to add in 
