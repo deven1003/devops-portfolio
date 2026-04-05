@@ -12,10 +12,10 @@ function App() {
 
   React.useEffect(() => {
     if (systemState === 'hacked') {
-      const audio = new Audio('/fahhhhh.mp3');
+      const audio = new Audio(`${import.meta.env.BASE_URL}fahhhhh.mp3`);
       audio.play().catch(e => console.log("Audio play blocked", e));
     } else if (systemState === 'collab') {
-      const audio = new Audio('/among-us-role-reveal-sound.mp3');
+      const audio = new Audio(`${import.meta.env.BASE_URL}among-us-role-reveal-sound.mp3`);
       audio.play().catch(e => console.log("Audio play blocked", e));
     }
   }, [systemState]);
@@ -24,7 +24,7 @@ function App() {
   React.useEffect(() => {
     const unlockAudio = () => {
       // Just a silent play attempt to unlock the browser's audio context for future hover-events.
-      const testAudio = new Audio('/fahhhhh.mp3');
+      const testAudio = new Audio(`${import.meta.env.BASE_URL}fahhhhh.mp3`);
       testAudio.volume = 0;
       testAudio.play().then(() => testAudio.pause()).catch(() => { });
       window.removeEventListener('click', unlockAudio);
@@ -79,7 +79,7 @@ function App() {
             ))}
           </div>
           <div className="collab-content">
-            <img src="/charcter_with_multiple_hands.png" alt="Multi-talented DevOps Engineer" className="floating-3d" style={{ maxWidth: '250px', marginBottom: '1rem' }} />
+            <img src={`${import.meta.env.BASE_URL}charcter_with_multiple_hands.png`} alt="Multi-talented DevOps Engineer" className="floating-3d" style={{ maxWidth: '250px', marginBottom: '1rem' }} />
             <h1>You're Persistent! Let's Connect.</h1>
             <p style={{ color: 'var(--text-muted)' }}>If you're determined enough to hunt down that bot 10 times, we'd definitely make a great team. Let's build scalable, professional infrastructure together!</p>
             <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', marginTop: '2rem' }}>
@@ -142,7 +142,7 @@ function App() {
             transition={{ duration: 1, delay: 0.3 }}
             className="split-image"
           >
-            <img src="/charcter_with_automation_tools.png" alt="Automation Tools Character" className="floating-3d" />
+            <img src={`${import.meta.env.BASE_URL}charcter_with_automation_tools.png`} alt="Automation Tools Character" className="floating-3d" />
           </motion.div>
         </section>
 
@@ -155,7 +155,7 @@ function App() {
             transition={{ duration: 0.8 }}
             className="split-image"
           >
-            <img src="/charcter_with_multiple_hands.png" alt="Multitasking DevOps" className="floating-3d" style={{ animationDelay: '-1s' }} />
+            <img src={`${import.meta.env.BASE_URL}charcter_with_multiple_hands.png`} alt="Multitasking DevOps" className="floating-3d" style={{ animationDelay: '-1s' }} />
           </motion.div>
           <div className="split-content">
             <h2 style={{ fontSize: '2.5rem', marginBottom: '2rem' }}>Core <span className="glow-text">Capabilities</span></h2>
@@ -167,12 +167,12 @@ function App() {
         {/* Tools Grid (Full Page Width) */}
         <section className="section" style={{ paddingTop: 0, paddingBottom: '4rem' }}>
           <div className="tool-grid" style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'flex-start', alignItems: 'center', width: '100%', gap: '3rem' }}>
-            <img src="/docker.png" alt="Docker" className="floating-icon" style={{ animationDelay: '0s', height: '120px' }} />
-            <img src="/ansible_3d.png" alt="Ansible" className="floating-icon" style={{ animationDelay: '-1.5s', height: '120px' }} />
-            <img src="/jenkins.png" alt="Jenkins" className="floating-icon" style={{ animationDelay: '-0.7s', height: '120px' }} />
-            <img src="/terraform_img.png" alt="Terraform" className="floating-icon" style={{ animationDelay: '-0.5s', height: '120px' }} />
-            <img src="/k8s.png" alt="Kubernetes" className="floating-icon" style={{ animationDelay: '-1.2s', height: '120px' }} />
-            <img src="/deven1003_github.png" alt="GitHub" className="floating-icon" style={{ animationDelay: '-0.3s', height: '120px', width: '120px' }} />
+            <img src={`${import.meta.env.BASE_URL}docker.png`} alt="Docker" className="floating-icon" style={{ animationDelay: '0s', height: '120px' }} />
+            <img src={`${import.meta.env.BASE_URL}ansible_3d.png`} alt="Ansible" className="floating-icon" style={{ animationDelay: '-1.5s', height: '120px' }} />
+            <img src={`${import.meta.env.BASE_URL}jenkins.png`} alt="Jenkins" className="floating-icon" style={{ animationDelay: '-0.7s', height: '120px' }} />
+            <img src={`${import.meta.env.BASE_URL}terraform_img.png`} alt="Terraform" className="floating-icon" style={{ animationDelay: '-0.5s', height: '120px' }} />
+            <img src={`${import.meta.env.BASE_URL}k8s.png`} alt="Kubernetes" className="floating-icon" style={{ animationDelay: '-1.2s', height: '120px' }} />
+            <img src={`${import.meta.env.BASE_URL}deven1003_github.png`} alt="GitHub" className="floating-icon" style={{ animationDelay: '-0.3s', height: '120px', width: '120px' }} />
           </div>
         </section>
 
@@ -246,7 +246,7 @@ function App() {
             style={{ flexDirection: 'column', gap: '3rem', justifyContent: 'flex-start', paddingTop: '4rem' }}
           >
             <div className="glass-panel" style={{ padding: '2rem', borderRadius: '20px', width: '100%', maxWidth: '450px', display: 'flex', justifyContent: 'center', alignItems: 'center', boxShadow: '0 10px 30px rgba(0, 255, 136, 0.1)' }}>
-              <img src="/cicd_pipeline.png" alt="CI/CD Pipeline" className="floating-3d" style={{ width: '100%', height: 'auto', animationDelay: '-2s' }} />
+              <img src={`${import.meta.env.BASE_URL}cicd_pipeline.png`} alt="CI/CD Pipeline" className="floating-3d" style={{ width: '100%', height: 'auto', animationDelay: '-2s' }} />
             </div>
 
             {/* Education and Certs Block */}
@@ -295,7 +295,7 @@ function App() {
             className="split-image"
             style={{ position: 'relative', width: '100%', minWidth: '400px' }}
           >
-            <img src="/charcter_with_social_handles.png" alt="Contact Handles" className="floating-3d" style={{ animationDelay: '-1.2s', width: '100%', maxWidth: '650px', position: 'relative', zIndex: 1 }} />
+            <img src={`${import.meta.env.BASE_URL}charcter_with_social_handles.png`} alt="Contact Handles" className="floating-3d" style={{ animationDelay: '-1.2s', width: '100%', maxWidth: '650px', position: 'relative', zIndex: 1 }} />
 
             {/* Invisible clickable areas over the PNG. Adjust top/left/width/height % to move the invisible buttons over the actual drawn icons! */}
             <a href="https://www.linkedin.com/in/deven-kalathiya/" target="_blank" rel="noreferrer" style={{ position: 'absolute', top: '0%', left: '0%', width: '100%', height: '20%', zIndex: 10, cursor: 'pointer' }} title="LinkedIn"></a>
@@ -313,7 +313,7 @@ function App() {
         style={botPos}
         onMouseEnter={moveBot}
       >
-        <img src="/chat_bot.png" alt="Chat Bot Support" />
+        <img src={`${import.meta.env.BASE_URL}chat_bot.png`} alt="Chat Bot Support" />
       </div>
 
     </div>
