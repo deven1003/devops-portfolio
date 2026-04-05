@@ -2,7 +2,7 @@ name: Deploy Portfolio to GitHub Pages
 
 on:
   push:
-    branches: ["main"] # Or "master", depending on your default branch
+    branches: ["main"]
 
 permissions:
   contents: read
@@ -19,15 +19,22 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm'
+
       - name: Install dependencies
-        run: npm ci
+        run: npm install
+
+      # 🔥 FORCE CLEAN BUILD (IMPORTANT)
+      - name: Clean old build
+        run: rm -rf dist
+
       - name: Build
         run: npm run build
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
@@ -43,4 +50,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-
